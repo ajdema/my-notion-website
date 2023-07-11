@@ -3,7 +3,7 @@ import { siteConfig } from './lib/site-config'
 export default siteConfig({
   // the site's root Notion page (required)
   rootNotionPageId: 'd20a751e8cd148c78d76f53d39d52bb3',
-                     
+
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
@@ -17,8 +17,7 @@ export default siteConfig({
   description: 'Example Next.js Notion Starter Kit Site',
 
   // social usernames (optional)
-  github: 'ajdema',
-  linkedin: 'aj-demarinis',
+
   // mastodon: '#', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
@@ -39,26 +38,33 @@ export default siteConfig({
 
   // map of notion page IDs to URL paths (optional)
   // any pages defined here will override their default URL paths
-  // example:
-  //
-  // pageUrlOverrides: {
-  //   '/foo': '067dd719a912471ea9a3ac10710e7fdf',
-  //   '/bar': '0be6efce9daf42688f65c76b89f8eb27'
-  // }
-  pageUrlOverrides: null,
+
+  pageUrlOverrides: {
+  '/about' : '66a27067d323416fb7d1b0e16f8b9b80',
+  '/projects' : '7cd1063b6008406984d99dfd84640768',
+  '/contact' : '7842db5fba8d4600ac2b36f90bb23c64',
+  '/home' : 'd20a751e8cd148c78d76f53d39d52bb3'
+  },
 
   // whether to use the default notion navigation style or a custom one with links to
   // important pages
-  navigationStyle: 'default'
-  // navigationStyle: 'custom',
-  // navigationLinks: [
-  //   {
-  //     title: 'About',
-  //     pageId: 'f1199d37579b41cbabfc0b5174f4256a'
-  //   },
-  //   {
-  //     title: 'Contact',
-  //     pageId: '6a29ebcb935a4f0689fe661ab5f3b8d1'
-  //   }
-  // ]
+  navigationStyle: 'custom',
+  navigationLinks: [
+    {
+      title: 'Home',
+      pageId: 'd20a751e8cd148c78d76f53d39d52bb3'
+      },
+    {
+      title: 'About',
+      pageId: '66a27067d323416fb7d1b0e16f8b9b80'
+      },
+    {
+      title: 'Projects',
+      pageId: '7cd1063b6008406984d99dfd84640768'
+      },
+    {
+      title: 'Contact',
+      pageId: '7842db5fba8d4600ac2b36f90bb23c64'
+      }
+  ]
 })
